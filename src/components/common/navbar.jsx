@@ -1,10 +1,12 @@
 import React from 'react'
-import { Container } from './container'
+import { Container } from './Container'
 
 export const Navbar = () => {
   return (
+    <>
     <Container>
-        <div className="text-black">dasdjsalkdsakl</div>
+        <h1 className="text-black">dasdjsalkdsakl</h1>
     </Container>
+    </>
   )
 }
