@@ -1,5 +1,5 @@
 import { useState, useRef } from "react";
-import { ChevronRight, ChevronLeft } from "lucide-react";
+import { MdChevronRight, MdChevronLeft } from "react-icons/md";
 
 const categories = [
   "All", "Yachts", "Boats", "RVs", "Electrical Engineering",
@@ -34,7 +34,7 @@ export default function CategorySlider() {
 
   return (
     <div
-      className="flex items-center bg-black space-x-2 overflow-hidden w-full"
+      className="flex items-center space-x-2 overflow-hidden w-auto"
       onWheel={handleWheel}
     >
       <button
@@ -42,13 +42,12 @@ export default function CategorySlider() {
         className={`p-2 rounded-full bg-gray-800 text-white disabled:opacity-50 ${startIndex === 0 ? "hidden" : "block"}`}
         disabled={startIndex === 0}
       >
-        <ChevronLeft size={20} />
+        <MdChevronLeft />
       </button>
       
       <div className="flex space-x-2 overflow-hidden" ref={containerRef}>
         {categories.slice(startIndex, startIndex + visibleCount).map((category, index) => (
-          <a href={`#${category.toLowerCase().replace(/ /g, "-")}`} key={index} className="px-4 py-2 bg-[ #4242428F
-] text-white rounded-full border border-transparent hover:border-white hover:bg-gray-800">
+          <a href={`#${category.toLowerCase().replace(/ /g, "-")}`} key={index} className="px-4 py-2 bg-gray-700 text-white rounded-full border border-transparent hover:border-white hover:bg-gray-800">
             {category}
           </a>
         ))}
@@ -59,7 +58,7 @@ export default function CategorySlider() {
         className={`p-2 rounded-full bg-gray-800 text-white disabled:opacity-50 ${startIndex + visibleCount >= categories.length ? "hidden" : "block"}`}
         disabled={startIndex + visibleCount >= categories.length}
       >
-        <ChevronRight size={20} />
+        <MdChevronRight />
       </button>
     </div>
   );
