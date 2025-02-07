@@ -1,7 +1,11 @@
-import {Sidebar} from  './components/sidebar'
+import React from 'react'
+import { Navbar } from '../../common/navbar'
 
 export const HomePage = () => {
   return (
-    <Sidebar/>
+    <div>
+      <Navbar />
+      
+    </div>
   )
 }
