@@ -1,7 +1,7 @@
-import React from 'react'
+import {Sidebar} from  './components/sidebar'
 
 export const HomePage = () => {
   return (
-    <div>home</div>
+    <Sidebar/>
   )
 }
