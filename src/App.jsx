@@ -1,14 +1,16 @@
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { HomePage } from "./components/pages/home/home";
-import { Navbar } from "./components/common/navbar";
+
+import CategorySlider from "./components/common/CategorySlider";
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<HomePage />} />
-        {/* <Route path="/" element={<Sidebar/>} /> */}
+  
+
+         <Route path="/" element={<CategorySlider/>}/>
       </Routes>
     </BrowserRouter>
   );
