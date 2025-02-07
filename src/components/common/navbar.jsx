@@ -1,13 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container } from "./Container";
+import { Sidebar } from "../pages/home/components/sidebar";
 
 export const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(true);
+  
+    const toggleSidebar = () => {
+      setIsOpen(!isOpen);
+    };
+    console.log(isOpen);
+    
   return (
     <>
       <Container>
         <div className="w-full h-[56px] flex items-center justify-between border-b-[1px] border-[#333333]">
           <div className="flex items-center gap-[30px]">
-            <button className="cursor-pointer">
+            <button className="cursor-pointer flex justify-center items-center w-[30px] h-[30px] rounded-full hover:bg-[#414141]"
+            onClick={toggleSidebar}>
               <img src="/asset/svgicons/hamburger.svg" alt="" />
             </button>
             <a href="#" className="flex items-center gap-[10px]">
@@ -30,6 +39,7 @@ export const Navbar = () => {
           </a>
         </div>
       </Container>
+        <Sidebar isOpen={isOpen} />
     </>
   );
 };
